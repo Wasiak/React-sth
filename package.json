@@ -1,0 +1,23 @@
+{
+  "name": "react-sth",
+  "version": "1.0.0",
+  "description": "first react app",
+  "main": "main.js",
+  "scripts": {
+    "test": "elo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wasiak/React-sth.git"
+  },
+  "author": "Wasiak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wasiak/React-sth/issues"
+  },
+  "homepage": "https://github.com/Wasiak/React-sth#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
