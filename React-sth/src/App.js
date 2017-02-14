@@ -4,8 +4,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      txt: 'this is the state text',
-      cat: 0
+      txt: 'this is the state text'
     }
   }
 
@@ -17,12 +16,22 @@ class App extends React.Component {
     // let txt = this.props.txt
     return (
       <div>
-        <input type="text" onChange={this.update.bind(this)}/>
-        <h1>{this.state.txt} - {this.state.cat}</h1>
+        <h1>{this.state.txt}</h1>
+        <Widget update={this.update.bind(this)} />
       </div>
     )
   }
 }
+
+// const Widget = (props) => 
+//   <input type="text" onChange={props.update} />
+
+function Widget(props) {
+  return (
+    <input type="text" onChange={props.update} />
+  );
+}
+
 
 // App.propTypes = {
 //   txt: React.PropTypes.string,
