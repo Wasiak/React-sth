@@ -18,7 +18,7 @@ class App extends React.Component {
       <div>
         <h1>{this.state.num}</h1>
         <Widget update={this.update.bind(this)} />
-        <Widget2 doubleTxt={this.state.num} />
+        <Widget2 doubleTxt={this.state.num} title={this.props.txt} />
       </div>
     )
   }
@@ -35,7 +35,10 @@ function Widget(props) {
 
 function Widget2(props) {
   return (
-    <input type="number" value={props.doubleTxt * 2} />
+    <div>
+      <span>{props.title}</span>
+      <input type="number" value={props.doubleTxt * 2} />
+    </div>
   );
 }
 
@@ -46,7 +49,8 @@ App.propTypes = {
 }
 
 App.defaultProps = {
-  num: 2
+  num: 2,
+  txt: 'Elo here double value'
 }
 
 export default App
