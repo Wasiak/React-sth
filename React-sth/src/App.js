@@ -4,20 +4,21 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      txt: 'this is the state text'
+      num: 2
     }
   }
 
   update(evt) {
-    this.setState({txt: evt.target.value})
+    this.setState({num: evt.target.value})
   }
 
   render() {
     // let txt = this.props.txt
     return (
       <div>
-        <h1>{this.state.txt}</h1>
+        <h1>{this.state.num}</h1>
         <Widget update={this.update.bind(this)} />
+        <Widget2 doubleTxt={this.state.num} />
       </div>
     )
   }
@@ -28,18 +29,24 @@ class App extends React.Component {
 
 function Widget(props) {
   return (
-    <input type="text" onChange={props.update} />
+    <input type="number" onChange={props.update} />
+  );
+}
+
+function Widget2(props) {
+  return (
+    <input type="number" value={props.doubleTxt * 2} />
   );
 }
 
 
-// App.propTypes = {
-//   txt: React.PropTypes.string,
-//   cat: React.PropTypes.number.isRequired
-// }
+App.propTypes = {
+  txt: React.PropTypes.string,
+  num: React.PropTypes.number.isRequired
+}
 
-// App.defaultProps = {
-//   txt: "this is default text"
-// }
+App.defaultProps = {
+  num: 2
+}
 
 export default App
