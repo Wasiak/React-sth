@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ProfileSearch from './ProfileSearch';
+// importing classes here give this css to all components
+// it could be in every component import for other css file for component
 import './classes.css';
 
 // class App extends React.Component {

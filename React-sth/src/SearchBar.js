@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 export default class SearchBar extends Component {
 
-	// state = {
- //    value: ''
-	// };
-
 	constructor(props) {
 		super(props);
 		this.state = {value: ''};
@@ -25,6 +21,9 @@ export default class SearchBar extends Component {
 				  placeholder='Type username'
 				  value={this.state.value}
 				  onChange={evt => this.handleInputChange(evt)}/>
+				  // arrow function in event 'onClick' means that it will be run afeter click, 
+				  // without this it would be running when render 
+				  // { } is JS and without arrow function React give to onClick value of faunction returned probably undefined
 				<button disabled={isDisable} onClick={() => this.props.handleSubmit(this.state.value)}>search</button>
 			</div>
 		)
